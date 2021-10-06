@@ -91,18 +91,18 @@ public class SCMSkipTools {
             logEmptyChangeLog(logger);
         }
 
-        ChangeLogSet.Entry matchedEntry = null;
+        boolean skipRun = true;
 
         for (Object entry : changeLogSet.getItems()) {
-            if (entry instanceof ChangeLogSet.Entry && inspectChangeSetEntry((Entry) entry, matcher)) {
-                matchedEntry = (Entry) entry;
+            if (entry instanceof ChangeLogSet.Entry && !inspectChangeSetEntry((Entry) entry, matcher)) {
+                skipRun = false;
                 break;
             }
         }
 
         String commitMessage  = combineChangeLogMessages(changeLogSet);
 
-        if (matchedEntry == null) {
+        if (!skipRun) {
             logger.println("SCM Skip: Pattern "
                     + matcher.getPattern().pattern()
                     + " NOT matched on message: "
