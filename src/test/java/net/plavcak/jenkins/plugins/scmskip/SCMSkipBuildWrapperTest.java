@@ -83,8 +83,6 @@ public class SCMSkipBuildWrapperTest {
         String expectedString = "SCM Skip: Pattern .*\\[(ci skip|skip ci)\\].* NOT matched on message: "
             + "Some change [skip ci] in code. Additional line.";
 
-        Assert.assertEquals("SCM Skip - build skipped", completedBuild.getDescription());
-
         jenkins.assertLogContains(expectedString, completedBuild);
     }
 }
