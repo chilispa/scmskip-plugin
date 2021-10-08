@@ -78,9 +78,9 @@ public class SCMSkipBuildWrapperTest {
         QueueTaskFuture<WorkflowRun> future =job.scheduleBuild2(0);
         Assert.assertNotNull(future);
 
-        WorkflowRun completedBuild = jenkins.assertBuildStatus(Result.ABORTED, future);
+        WorkflowRun completedBuild = jenkins.assertBuildStatus(Result.SUCCESS, future);
 
-        String expectedString = "SCM Skip: Pattern .*\\[(ci skip|skip ci)\\].* matched on message: "
+        String expectedString = "SCM Skip: Pattern .*\\[(ci skip|skip ci)\\].* NOT matched on message: "
             + "Some change [skip ci] in code. Additional line.";
 
         Assert.assertEquals("SCM Skip - build skipped", completedBuild.getDescription());
