@@ -126,7 +126,7 @@ public class SCMSkipTools {
             }
         }
 
-        return matchedEntry != null;
+        return skipRun;
     }
 
     public static void stopBuild(Run<?, ?> run) throws AbortException, IOException, ServletException {
