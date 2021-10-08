@@ -128,7 +128,7 @@
     </pluginRepositories>
     <distributionManagement>
         <repository>
-            <id>repo.jenkins-ci.org</id>
+            <id>maven.jenkins-ci.org</id>
             <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/chilispa/scmskip-plugin</url>
         </repository>
