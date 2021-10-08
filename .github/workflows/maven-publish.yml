@@ -26,6 +26,6 @@ jobs:
       run: mvn -Djenkins.version=2.121.1 -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn --batch-mode -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/chilispa/scmskip-plugin deploy 
+      run: mvn --batch-mode -DskipTests -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/chilispa/scmskip-plugin deploy 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
