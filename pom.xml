@@ -128,9 +128,9 @@
     </pluginRepositories>
     <distributionManagement>
         <repository>
-        <id>github</id>
-        <name>GitHub Packages</name>
-        <url>https://maven.pkg.github.com/chilispa/scmskip-plugin</url>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/chilispa/scmskip-plugin</url>
         </repository>
     </distributionManagement>
 </project>
